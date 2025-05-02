@@ -1,0 +1,87 @@
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4px;
+  width: 100%;
+  height: 100vh;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.card.expanded {
+  grid-column: span 2;
+  grid-row: span 2;
+  padding: 20px;
+  z-index: 10;
+  width: auto !important;
+  height: auto !important;
+}
+
+.card.collapsed {
+  opacity: 0.9;
+  transform: scale(0.95);
+}
+
+.div1.expanded {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.div2.expanded {
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.div3.expanded {
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.div4.expanded {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 2;
+}
+
+.div5.expanded {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 2;
+}
+
+.div6.expanded {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 2;
+}
+
+@media (max-width: 768px) {
+  .parent {
+    grid-template-columns: 1fr;
+    display: block;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .card.expanded {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    position: relative;
+    z-index: 10;
+  }
+}
