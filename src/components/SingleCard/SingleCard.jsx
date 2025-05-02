@@ -3,6 +3,8 @@ import "./SingleCard.css";
 import { CiHeart, CiStar, CiCalendar, CiPhone, CiBellOn } from "react-icons/ci";
 import { FiMessageCircle } from "react-icons/fi";
 import { SlPeople } from "react-icons/sl";
+import { FaExpandAlt } from "react-icons/fa";
+import { RiCollapseDiagonalLine } from "react-icons/ri";
 
 const SingleCard = ({ card, howIsExpand }) => {
   return (
@@ -104,11 +106,11 @@ const SingleCard = ({ card, howIsExpand }) => {
         </div>
       </div>
       <div className="cardFooter">
-        <img
-          className="expandicon"
-          src={`${howIsExpand === card.id ? "collapse.png" : "expand.png"}`}
-          alt=""
-        />
+        {howIsExpand === card.id ? (
+          <FaExpandAlt color="#5c5c5c" size="1.5em" />
+        ) : (
+          <RiCollapseDiagonalLine color="#5c5c5c" size="1.5em" />
+        )}
       </div>
     </>
   );
