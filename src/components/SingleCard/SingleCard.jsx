@@ -107,9 +107,9 @@ const SingleCard = ({ card, howIsExpand }) => {
       </div>
       <div className="cardFooter">
         {howIsExpand === card.id ? (
-          <FaExpandAlt color="#5c5c5c" size="1.5em" />
-        ) : (
           <RiCollapseDiagonalLine color="#5c5c5c" size="1.5em" />
+        ) : (
+          <FaExpandAlt color="#5c5c5c" size="1.5em" />
         )}
       </div>
     </>
